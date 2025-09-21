@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 import { 
   Users, 
   GraduationCap, 
@@ -20,16 +20,16 @@ const METRIC_TYPES = {
 } as const
 
 const TREND_DIRECTIONS = {
-  UP: 'up',
-  DOWN: 'down',
-  NEUTRAL: 'neutral'
+  UP: 'UP',
+  DOWN: 'DOWN',
+  NEUTRAL: 'NEUTRAL'
 } as const
 
 const COLOR_VARIANTS = {
-  BLUE: 'blue',
-  GREEN: 'green',
-  PURPLE: 'purple',
-  ORANGE: 'orange'
+  BLUE: 'BLUE',
+  GREEN: 'GREEN',
+  PURPLE: 'PURPLE',
+  ORANGE: 'ORANGE'
 } as const
 
 const UI_TEXT = {

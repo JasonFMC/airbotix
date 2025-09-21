@@ -6,7 +6,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { ROUTE_PATHS } from '../constants/routes';
+import { PUBLIC_ROUTES } from '../constants/routes';
 
 export interface RouteGuardProps {
   children: React.ReactNode;
@@ -17,7 +17,7 @@ export interface RouteGuardProps {
 export function RouteGuard({ 
   children, 
   requiredPermission,
-  fallbackPath = ROUTE_PATHS.UNAUTHORIZED 
+  fallbackPath = PUBLIC_ROUTES.LOGIN 
 }: RouteGuardProps) {
   const { user, profile, loading } = useAuth();
   const location = useLocation();
@@ -36,7 +36,7 @@ export function RouteGuard({
 
       // Check if user is authenticated
       if (!user || !profile) {
-        navigate(ROUTE_PATHS.LOGIN, { 
+        navigate(PUBLIC_ROUTES.LOGIN, { 
           state: { from: location.pathname } 
         });
         return;

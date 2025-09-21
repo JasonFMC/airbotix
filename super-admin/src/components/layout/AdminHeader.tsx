@@ -15,11 +15,11 @@ interface AdminHeaderProps {
 }
 
 const AdminHeader: React.FC<AdminHeaderProps> = ({ onSidebarToggle }) => {
-  const { user, profile, signOut } = useAuth()
+  const { user, userRole, signOut } = useAuth()
 
   const getUserInitials = () => {
-    if (profile?.full_name) {
-      return profile.full_name
+    if (user?.user_metadata?.full_name) {
+      return (user.user_metadata.full_name as string)
         .split(' ')
         .map(name => name.charAt(0))
         .join('')
@@ -30,11 +30,11 @@ const AdminHeader: React.FC<AdminHeaderProps> = ({ onSidebarToggle }) => {
   }
 
   const getDisplayName = () => {
-    return profile?.full_name || user?.email || 'User'
+    return (user?.user_metadata?.full_name as string) || user?.email || 'User'
   }
 
   const getRoleDisplayName = () => {
-    return profile?.role || 'super_admin'
+    return userRole || 'super_admin'
   }
 
   const handleUserMenuAction = async (action: string) => {

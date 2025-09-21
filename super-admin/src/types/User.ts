@@ -59,4 +59,4 @@ export interface ResponsiveUserInfo {
 }
 
 // Export types for external use
-export type { UserDropdownProps, NotificationItem, NotificationDropdownProps, UserProfile, UserMenuAction, ResponsiveUserInfo }
+// Explicit re-exports omitted to avoid duplicate export conflicts

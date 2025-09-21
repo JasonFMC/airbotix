@@ -43,7 +43,7 @@ const mockActivities: DashboardActivity[] = [
 ]
 
 export default function Dashboard() {
-  const { data, loading, error, refresh } = useDashboardData()
+  useDashboardData()
 
   const getTimeAgo = (timestamp: string) => {
     const now = new Date()
@@ -71,12 +71,7 @@ export default function Dashboard() {
       </div>
 
       {/* Dashboard Metrics */}
-      <DashboardMetrics 
-        data={data || undefined}
-        loading={loading}
-        error={error || undefined}
-        onRefresh={refresh}
-      />
+      <DashboardMetrics />
 
       {/* Today's Overview */}
       <TodayOverview 

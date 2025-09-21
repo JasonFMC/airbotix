@@ -1,5 +1,5 @@
 // Central export for all types
-export type { User as NewUser, UserProfile, AuthUser } from './User'
+export type { UserProfile } from './User'
 export type { UserRole } from '../constants/userRoles'
 
 // Import UserRole for internal use
